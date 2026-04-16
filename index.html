@@ -4,115 +4,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crave Visuals — Premium Food Photography & Web Design for Restaurants</title>
+    <title>Crave Visuals — Premium Food Photography & Digital Redesign for Restaurants</title>
     <meta name="description"
-        content="Upgrade your restaurant's digital presence with premium food photography and sleek website design. Turn scrollers into diners with Crave Visuals.">
+        content="Upgrade your restaurant's digital presence with premium food photography, menu redesign, Zomato & Swiggy listing makeover, and sleek website design. Crave Visuals — Turn scrollers into diners.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- ── CUSTOM CURSOR ──────────────────────────── -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- ── LOADER ─────────────────────────────────── -->
+    <div id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <span class="loader-icon">◈</span>
+                <span class="loader-text">Crave <span class="loader-accent">Visuals</span></span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- ── NAVBAR ─────────────────────────────────── -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" id="nav-logo">
                 <span class="logo-icon">◈</span> Crave <span class="logo-accent">Visuals</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#problem">Why Us</a></li>
-                <li><a href="#services">Services</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" data-hover="Why Us">Why Us</a></li>
+                <li><a href="#services" data-hover="Services">Services</a></li>
+                <li><a href="#pricing" data-hover="Pricing">Pricing</a></li>
+                <li><a href="#gallery" data-hover="Gallery">Gallery</a></li>
                 <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
             </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
+    <!-- ── MOBILE MENU ────────────────────────────── -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#about">Why Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact" class="nav-cta-mobile">Get in Touch</a></li>
+        </ul>
+    </div>
+
     <!-- ── HERO ───────────────────────────────────── -->
     <section id="hero">
-        <div class="hero-glow hero-glow-1"></div>
-        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-particles" id="hero-particles"></div>
+        <div class="hero-gradient-orb hero-orb-1"></div>
+        <div class="hero-gradient-orb hero-orb-2"></div>
+        <div class="hero-gradient-orb hero-orb-3"></div>
 
-        <div class="hero-content reveal">
-            <div class="hero-badge">✦ Premium Visual Agency for Restaurants</div>
-            <h1>Turn Scrollers into Diners.<br>
-                <span class="gradient-text">Upgrade Your Restaurant's Digital Look.</span>
+        <div class="hero-content">
+            <div class="hero-badge anim-fade-up" data-delay="0.3">
+                <span class="badge-dot"></span>
+                Premium Visual Agency for Restaurants
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line anim-fade-up" data-delay="0.5">Turn Scrollers</span>
+                <span class="title-line anim-fade-up" data-delay="0.7">into <span class="gradient-text">Diners.</span></span>
             </h1>
-            <p class="hero-sub">Premium food photography and sleek websites designed to bring more foot traffic to your
-                door.</p>
-            <a href="https://wa.me/7022134248?text=Hi%20Crave%20Visuals!%20I%27d%20like%20a%20free%20sample."
-                class="btn btn-primary">
-                <i class="fa-brands fa-whatsapp"></i> Get Your Free Sample via WhatsApp
-            </a>
+            <p class="hero-sub anim-fade-up" data-delay="0.9">
+                Premium food photography, menu redesign & sleek websites — everything your restaurant needs
+                to dominate online.
+            </p>
+            <div class="hero-ctas anim-fade-up" data-delay="1.1">
+                <a href="https://wa.me/7022134248?text=Hi%20Crave%20Visuals!%20I%27d%20like%20a%20free%20sample."
+                    class="btn btn-primary magnetic-btn" id="hero-cta-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content"><i class="fa-brands fa-whatsapp"></i> Get Free Sample</span>
+                </a>
+                <a href="#services" class="btn btn-outline magnetic-btn" id="hero-cta-secondary">
+                    <span class="btn-content">Explore Services <i class="fa-solid fa-arrow-down"></i></span>
+                </a>
+            </div>
+
+            <div class="hero-stats anim-fade-up" data-delay="1.3">
+                <div class="hero-stat">
+                    <span class="hero-stat-num counter" data-target="50">0</span><span class="hero-stat-plus">+</span>
+                    <span class="hero-stat-label">Happy Clients</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num counter" data-target="500">0</span><span class="hero-stat-plus">+</span>
+                    <span class="hero-stat-label">Photos Delivered</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num counter" data-target="24">0</span><span class="hero-stat-plus">hr</span>
+                    <span class="hero-stat-label">Turnaround</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Before / After Gallery -->
-        <div class="ba-section reveal">
-            <div class="ba-heading">
-                <span class="ba-pill pill-before"><i class="fa-solid fa-mobile-screen"></i> Before</span>
-                <span class="ba-divider-text">vs</span>
-                <span class="ba-pill pill-after"><i class="fa-solid fa-camera-retro"></i> After</span>
+        <div class="scroll-indicator anim-fade-up" data-delay="1.6">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
             </div>
-
-            <div class="ba-grid">
-                <!-- Pair 1 -->
-                <div class="ba-pair">
-                    <div class="ba-card before-card">
-                        <img src="./1.jpg" alt="Before - Fish Fry phone photo" loading="lazy">
-                        <div class="ba-label before-label"><i class="fa-solid fa-mobile-screen"></i> Before</div>
-                    </div>
-                    <div class="ba-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="ba-card after-card">
-                        <img src="./1 u.jpg" alt="After - Fish Fry professional photo" loading="lazy">
-                        <div class="ba-label after-label"><i class="fa-solid fa-star"></i> After</div>
-                    </div>
-                </div>
-
-                <!-- Pair 2 -->
-                <div class="ba-pair">
-                    <div class="ba-card before-card">
-                        <img src="./2 g.jpg" alt="Before - Thali phone photo" loading="lazy">
-                        <div class="ba-label before-label"><i class="fa-solid fa-mobile-screen"></i> Before</div>
-                    </div>
-                    <div class="ba-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="ba-card after-card">
-                        <img src="./2 u g.jpg" alt="After - Thali professional photo" loading="lazy">
-                        <div class="ba-label after-label"><i class="fa-solid fa-star"></i> After</div>
-                    </div>
-                </div>
-
-                <!-- Pair 3 -->
-                <div class="ba-pair">
-                    <div class="ba-card before-card">
-                        <img src="./3 g.jpg" alt="Before - Chicken phone photo" loading="lazy">
-                        <div class="ba-label before-label"><i class="fa-solid fa-mobile-screen"></i> Before</div>
-                    </div>
-                    <div class="ba-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="ba-card after-card">
-                        <img src="./3 u g.jpg" alt="After - Chicken professional photo" loading="lazy">
-                        <div class="ba-label after-label"><i class="fa-solid fa-star"></i> After</div>
-                    </div>
-                </div>
-            </div>
+            <span>Scroll to explore</span>
         </div>
     </section>
 
-    <!-- ── PROBLEM & SOLUTION ─────────────────────── -->
-    <section id="problem">
+    <!-- ── ABOUT / WHY US ─────────────────────────── -->
+    <section id="about">
         <div class="section-container">
-            <div class="problem-grid reveal">
-                <div class="problem-card problem-bad">
-                    <div class="problem-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="section-header reveal">
+                <div class="section-badge">✦ The Difference</div>
+                <h2>Why Restaurants <span class="gradient-text">Choose Us</span></h2>
+                <p class="section-sub">Your food deserves to look as good online as it tastes in person.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card glass-card reveal" data-tilt>
+                    <div class="about-card-glow"></div>
+                    <div class="about-icon-wrap icon-red">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
                     <h3>The Problem</h3>
-                    <p>Poor-quality Google Maps &amp; Zomato photos make your food look unappetizing. Customers scroll
-                        right past and pick your competitor instead. <strong>You're losing orders every single
-                            day</strong> because of bad photos taken on a phone in bad lighting.</p>
+                    <p>Poor-quality Google Maps & Zomato photos make your food look unappetizing. Customers scroll
+                        right past and pick your competitor. <strong>You're losing orders every single day</strong>
+                        because of bad photos.</p>
                     <div class="stat-row">
                         <div class="stat">
-                            <span class="stat-num">75%</span>
+                            <span class="stat-num counter" data-target="75">0</span><span class="stat-suffix">%</span>
                             <span class="stat-label">of diners check photos before ordering</span>
                         </div>
                         <div class="stat">
@@ -121,12 +153,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="problem-card problem-good">
-                    <div class="problem-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+
+                <div class="about-card glass-card reveal" data-tilt>
+                    <div class="about-card-glow"></div>
+                    <div class="about-icon-wrap icon-gold">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
                     <h3>Our Solution</h3>
                     <p>We replace those blurry phone shots with <strong>mouth-watering, studio-grade food
-                            photography</strong> and pair it with a sleek, modern website. The result? More clicks, more
-                        foot traffic, more revenue — practically overnight.</p>
+                            photography</strong> and pair it with redesigned menus & a sleek website. More clicks,
+                        more traffic, more revenue.</p>
                     <div class="stat-row">
                         <div class="stat">
                             <span class="stat-num">↑40%</span>
@@ -142,65 +178,286 @@
         </div>
     </section>
 
-    <!-- ── SERVICES & PRICING ─────────────────────── -->
+    <!-- ── SERVICES ───────────────────────────────── -->
     <section id="services">
         <div class="section-container">
             <div class="section-header reveal">
                 <div class="section-badge">✦ What We Offer</div>
-                <h2>Services &amp; <span class="gradient-text">Transparent Pricing</span></h2>
+                <h2>Our <span class="gradient-text">Services</span></h2>
+                <p class="section-sub">Everything your restaurant needs to look stunning across every platform.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card glass-card reveal" data-tilt>
+                    <div class="service-card-shine"></div>
+                    <div class="service-number">01</div>
+                    <div class="service-icon-wrap">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3>Menu Redesign</h3>
+                    <p>Transform your restaurant menu into a visually stunning, brand-aligned masterpiece that makes
+                        every dish irresistible.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Modern, clean typography</li>
+                        <li><i class="fa-solid fa-check"></i> Brand-matched color palette</li>
+                        <li><i class="fa-solid fa-check"></i> Print-ready & digital formats</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card glass-card reveal" data-tilt>
+                    <div class="service-card-shine"></div>
+                    <div class="service-number">02</div>
+                    <div class="service-icon-wrap">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h3>Google Photos Design</h3>
+                    <p>Upgrade your Google Maps & Business listing with professional food photos that attract
+                        customers searching locally.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Optimized for Google Business</li>
+                        <li><i class="fa-solid fa-check"></i> High-resolution delivery</li>
+                        <li><i class="fa-solid fa-check"></i> SEO-boosted listings</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card glass-card reveal" data-tilt>
+                    <div class="service-card-shine"></div>
+                    <div class="service-number">03</div>
+                    <div class="service-icon-wrap">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3>Zomato & Swiggy Redesign</h3>
+                    <p>Make your Zomato and Swiggy listings pop with scroll-stopping photos and optimized layouts 
+                        that drive more orders.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Platform-optimized sizing</li>
+                        <li><i class="fa-solid fa-check"></i> Thumbnail-first design</li>
+                        <li><i class="fa-solid fa-check"></i> Increased click-through rate</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card glass-card reveal" data-tilt>
+                    <div class="service-card-shine"></div>
+                    <div class="service-number">04</div>
+                    <div class="service-icon-wrap">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3>Website Design</h3>
+                    <p>A sleek, mobile-friendly restaurant website that turns visitors into diners with stunning visuals
+                        and seamless UX.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Mobile-first responsive design</li>
+                        <li><i class="fa-solid fa-check"></i> Fast loading & SEO-optimized</li>
+                        <li><i class="fa-solid fa-check"></i> Online menu & contact integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── BEFORE / AFTER GALLERY ─────────────────── -->
+    <section id="gallery">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-badge">✦ See The Difference</div>
+                <h2>Before & <span class="gradient-text">After</span></h2>
+                <p class="section-sub">Real transformations from our clients. Drag the slider to compare.</p>
+            </div>
+
+            <div class="gallery-showcase">
+                <!-- Compare Slider 1 -->
+                <div class="compare-card reveal" data-tilt>
+                    <div class="compare-slider" id="compare-1">
+                        <div class="compare-before">
+                            <img src="./1.jpg" alt="Before - Fish Fry phone photo" loading="lazy">
+                            <div class="compare-label compare-label-before"><i class="fa-solid fa-mobile-screen"></i> Before</div>
+                        </div>
+                        <div class="compare-after">
+                            <img src="./1 u.jpg" alt="After - Fish Fry professional photo" loading="lazy">
+                            <div class="compare-label compare-label-after"><i class="fa-solid fa-star"></i> After</div>
+                        </div>
+                        <div class="compare-handle">
+                            <div class="compare-handle-line"></div>
+                            <div class="compare-handle-circle">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                            </div>
+                            <div class="compare-handle-line"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compare Slider 2 -->
+                <div class="compare-card reveal" data-tilt>
+                    <div class="compare-slider" id="compare-2">
+                        <div class="compare-before">
+                            <img src="./2 g.jpg" alt="Before - Thali phone photo" loading="lazy">
+                            <div class="compare-label compare-label-before"><i class="fa-solid fa-mobile-screen"></i> Before</div>
+                        </div>
+                        <div class="compare-after">
+                            <img src="./2 u g.jpg" alt="After - Thali professional photo" loading="lazy">
+                            <div class="compare-label compare-label-after"><i class="fa-solid fa-star"></i> After</div>
+                        </div>
+                        <div class="compare-handle">
+                            <div class="compare-handle-line"></div>
+                            <div class="compare-handle-circle">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                            </div>
+                            <div class="compare-handle-line"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compare Slider 3 -->
+                <div class="compare-card reveal" data-tilt>
+                    <div class="compare-slider" id="compare-3">
+                        <div class="compare-before">
+                            <img src="./3 g.jpg" alt="Before - Chicken phone photo" loading="lazy">
+                            <div class="compare-label compare-label-before"><i class="fa-solid fa-mobile-screen"></i> Before</div>
+                        </div>
+                        <div class="compare-after">
+                            <img src="./3 u g.jpg" alt="After - Chicken professional photo" loading="lazy">
+                            <div class="compare-label compare-label-after"><i class="fa-solid fa-star"></i> After</div>
+                        </div>
+                        <div class="compare-handle">
+                            <div class="compare-handle-line"></div>
+                            <div class="compare-handle-circle">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                            </div>
+                            <div class="compare-handle-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PRICING ────────────────────────────────── -->
+    <section id="pricing">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-badge">✦ Transparent Pricing</div>
+                <h2>Plans That <span class="gradient-text">Fit Your Budget</span></h2>
                 <p class="section-sub">No hidden fees. No surprises. Just premium quality at honest prices.</p>
             </div>
 
             <div class="pricing-grid">
-                <div class="pricing-card reveal">
-                    <div class="card-glow"></div>
-                    <div class="card-badge">Most Popular</div>
-                    <div class="card-icon"><i class="fa-solid fa-camera-retro"></i></div>
-                    <h3>Menu Photography Upgrade</h3>
-                    <div class="price">
-                        <span class="price-currency">₹</span><span class="price-amount">500</span>
-                        <span class="price-period">for 10 high-quality photos</span>
+                <!-- Plan 1: Photos Only -->
+                <div class="pricing-card glass-card reveal" data-tilt>
+                    <div class="pricing-card-glow"></div>
+                    <div class="card-badge">Starter</div>
+                    <div class="pricing-icon">
+                        <i class="fa-solid fa-camera-retro"></i>
                     </div>
+                    <h3>Photos Only</h3>
+                    <div class="price">
+                        <span class="price-currency">₹</span>
+                        <span class="price-amount">500</span>
+                    </div>
+                    <span class="price-period">for 10 high-quality photos</span>
                     <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> <strong>10 professional photos</strong> included</li>
                         <li><i class="fa-solid fa-check"></i> <strong>20% discount</strong> on orders of more than 10
                             photos</li>
-                        <li><i class="fa-solid fa-check"></i> Perfect for <strong>Zomato, Swiggy &amp; Google
+                        <li><i class="fa-solid fa-check"></i> Perfect for <strong>Zomato, Swiggy & Google
                                 Maps</strong></li>
-                        <li><i class="fa-solid fa-check"></i> Professional lighting &amp; styling included</li>
+                        <li><i class="fa-solid fa-check"></i> Professional lighting & styling</li>
                         <li><i class="fa-solid fa-check"></i> Delivered in 24-48 hours</li>
                     </ul>
-                    <a href="https://wa.me/919876543210?text=Hi!%20I%27m%20interested%20in%20the%20Menu%20Photography%20Upgrade."
-                        class="btn btn-primary btn-card">
-                        <i class="fa-brands fa-whatsapp"></i> Get Started
+                    <a href="https://wa.me/7022134248?text=Hi!%20I%27m%20interested%20in%20the%20Photos%20Only%20plan."
+                        class="btn btn-outline btn-card magnetic-btn" id="pricing-cta-1">
+                        <span class="btn-content"><i class="fa-brands fa-whatsapp"></i> Get Started</span>
                     </a>
                 </div>
 
-                <div class="pricing-card card-featured reveal">
-                    <div class="card-glow"></div>
-                    <div class="card-badge badge-gold">Complete Package</div>
-                    <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
-                    <h3>Complete Digital Web Design</h3>
-                    <div class="price">
-                        <span class="price-currency">₹</span><span class="price-amount">1,500</span>
-                        <span class="price-period">base design starting price</span>
+                <!-- Plan 2: Photos + Menu Redesign -->
+                <div class="pricing-card glass-card card-featured reveal" data-tilt>
+                    <div class="pricing-card-glow"></div>
+                    <div class="card-badge badge-gold"><i class="fa-solid fa-crown"></i> Most Popular</div>
+                    <div class="pricing-icon">
+                        <i class="fa-solid fa-palette"></i>
                     </div>
+                    <h3>Photos + Menu Redesign</h3>
+                    <div class="price">
+                        <span class="price-currency">₹</span>
+                        <span class="price-amount">1,000</span>
+                    </div>
+                    <span class="price-period">photos & complete menu redesign</span>
                     <ul class="features">
-                        <li><i class="fa-solid fa-check"></i> <strong>Custom requirements</strong> available on request
-                        </li>
-                        <li><i class="fa-solid fa-check"></i> Domain &amp; Hosting for just <strong>₹1,000/year</strong>
-                        </li>
-                        <li><i class="fa-solid fa-check"></i> <strong>Mobile-friendly</strong> and fast loading</li>
-                        <li><i class="fa-solid fa-check"></i> SEO-optimized for local search</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>10 professional photos</strong> included</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Complete menu redesign</strong></li>
+                        <li><i class="fa-solid fa-check"></i> <strong>20% discount</strong> for extra photos</li>
+                        <li><i class="fa-solid fa-check"></i> Print-ready & digital menu formats</li>
+                        <li><i class="fa-solid fa-check"></i> Zomato & Swiggy optimized</li>
+                        <li><i class="fa-solid fa-check"></i> Google Maps listing upgrade</li>
+                    </ul>
+                    <a href="https://wa.me/7022134248?text=Hi!%20I%27m%20interested%20in%20the%20Photos%20%2B%20Menu%20Redesign%20plan."
+                        class="btn btn-primary btn-card magnetic-btn" id="pricing-cta-2">
+                        <span class="btn-bg"></span>
+                        <span class="btn-content"><i class="fa-brands fa-whatsapp"></i> Get Started</span>
+                    </a>
+                </div>
+
+                <!-- Plan 3: Full Package -->
+                <div class="pricing-card glass-card reveal" data-tilt>
+                    <div class="pricing-card-glow"></div>
+                    <div class="card-badge badge-premium"><i class="fa-solid fa-gem"></i> Full Package</div>
+                    <div class="pricing-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3>Complete Digital Makeover</h3>
+                    <div class="price">
+                        <span class="price-currency">₹</span>
+                        <span class="price-amount">5,000</span>
+                    </div>
+                    <span class="price-period">website + photos + menu redesign</span>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> <strong>Custom website</strong> design & development</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Professional food photography</strong></li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Complete menu redesign</strong></li>
+                        <li><i class="fa-solid fa-check"></i> Zomato & Swiggy listing makeover</li>
+                        <li><i class="fa-solid fa-check"></i> Google Maps photo upgrade</li>
+                        <li><i class="fa-solid fa-check"></i> Mobile-friendly & SEO optimized</li>
                         <li><i class="fa-solid fa-check"></i> Ongoing support included</li>
                     </ul>
-                    <a href="https://wa.me/7022134248?text=Hi!%20I%27m%20interested%20in%20the%20Complete%20Digital%20Web%20Design%20package."
-                        class="btn btn-primary btn-card">
-                        <i class="fa-brands fa-whatsapp"></i> Get Started
+                    <div class="domain-note">
+                        <i class="fa-solid fa-info-circle"></i> Domain & hosting charges extra
+                    </div>
+                    <a href="https://wa.me/7022134248?text=Hi!%20I%27m%20interested%20in%20the%20Complete%20Digital%20Makeover%20package."
+                        class="btn btn-outline btn-card magnetic-btn" id="pricing-cta-3">
+                        <span class="btn-content"><i class="fa-brands fa-whatsapp"></i> Get Started</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ── MARQUEE / TRUST ────────────────────────── -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>✦ Food Photography</span>
+                <span>✦ Menu Redesign</span>
+                <span>✦ Google Photos</span>
+                <span>✦ Zomato Redesign</span>
+                <span>✦ Swiggy Redesign</span>
+                <span>✦ Website Design</span>
+                <span>✦ Brand Identity</span>
+                <span>✦ Digital Marketing</span>
+                <span>✦ Food Photography</span>
+                <span>✦ Menu Redesign</span>
+                <span>✦ Google Photos</span>
+                <span>✦ Zomato Redesign</span>
+                <span>✦ Swiggy Redesign</span>
+                <span>✦ Website Design</span>
+                <span>✦ Brand Identity</span>
+                <span>✦ Digital Marketing</span>
+            </div>
+        </div>
+    </div>
 
     <!-- ── FOOTER ─────────────────────────────────── -->
     <footer id="contact">
@@ -210,18 +467,8 @@
                     <a href="#" class="logo">
                         <span class="logo-icon">◈</span> Crave <span class="logo-accent">Visuals</span>
                     </a>
-                    <p class="footer-tagline">Transforming how restaurants look online.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <a href="#hero">Home</a>
-                    <a href="#problem">Why Us</a>
-                    <a href="#services">Services</a>
-                </div>
-                <div class="footer-contact">
-                    <h4>Get in Touch</h4>
-                    <a href="mailto:girishpatil621@gmail.com"><i class="fa-solid fa-envelope"></i>
-                        girishpatil621@gmail.com</a>
+                    <p class="footer-tagline">Transforming how restaurants look online. Premium food photography,
+                        menu redesign & web design.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -229,18 +476,41 @@
                         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
+                <div class="footer-links-group">
+                    <h4>Quick Links</h4>
+                    <a href="#hero">Home</a>
+                    <a href="#about">Why Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#gallery">Gallery</a>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Services</h4>
+                    <a href="#services">Menu Redesign</a>
+                    <a href="#services">Google Photos</a>
+                    <a href="#services">Zomato & Swiggy</a>
+                    <a href="#services">Website Design</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <a href="mailto:girishpatil621@gmail.com"><i class="fa-solid fa-envelope"></i>
+                        girishpatil621@gmail.com</a>
+                    <a href="https://wa.me/7022134248"><i class="fa-brands fa-whatsapp"></i> +91 70221 34248</a>
+                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Crave Visuals. All rights reserved.</p>
+                <p class="footer-made">Made with <span class="heart">♥</span> for restaurants</p>
             </div>
         </div>
     </footer>
 
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/7022134248?text=Hi%20Crave%20Visuals!%20I%27d%20like%20to%20know%20more%20about%20your%20services."
-        class="whatsapp-float" aria-label="Chat on WhatsApp">
+        class="whatsapp-float" aria-label="Chat on WhatsApp" id="whatsapp-float">
         <i class="fa-brands fa-whatsapp"></i>
         <span class="whatsapp-tooltip">Chat with us!</span>
+        <span class="whatsapp-ping"></span>
     </a>
 
     <script src="script.js"></script>
